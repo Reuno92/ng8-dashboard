@@ -8,6 +8,9 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent {
+
+  public titlePage: string;
+
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -29,5 +32,7 @@ export class LandingComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.titlePage = 'Landing';
+  }
 }
